@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PANCHAKA | Pisang Nugget & Cheese Stick</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    /* ===== WARNA (ganti di sini saja) ===== */
+    :root {
+      --krem: #FFF8E7;
+      --kuning: #FFE08A;
+      --peach: #FFB88C;
+      --coral: #FF8A5B;
+      --coklat: #5A3E2B;
+      --putih: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background-color: var(--krem);
+      color: var(--coklat);
+      font-family: 'Nunito', Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ===== BAGIAN ATAS (HERO) ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 90px 20px 100px;
+      background: linear-gradient(135deg, var(--kuning), var(--peach));
+      border-radius: 0 0 50% 50% / 0 0 50px 50px;
+    }
+    .hero h1 {
+      font-family: 'Fredoka', cursive;
+      font-size: 4rem;
+      letter-spacing: 8px;
+      margin: 0;
+      color: var(--coklat);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin: 8px 0 24px;
+    }
+
+    /* ===== HIASAN MELAYANG ===== */
+    .hiasan {
+      position: absolute;
+      font-size: 2.2rem;
+      animation: melayang 4s ease-in-out infinite;
+    }
+    .h1 { top: 12%; left: 8%; }
+    .h2 { top: 20%; right: 10%; animation-delay: 1s; }
+    .h3 { bottom: 18%; left: 15%; animation-delay: 2s; }
+    .h4 { bottom: 22%; right: 16%; animation-delay: 0.5s; }
+    .h5 { top: 55%; left: 3%; animation-delay: 1.5s; }
+    .h6 { top: 8%; left: 48%; animation-delay: 2.5s; }
+
+    @keyframes melayang {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-14px) rotate(5deg); }
+    }
+
+    /* ===== BAGIAN-BAGIAN ===== */
+    section {
+      max-width: 950px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    h2 {
+      font-family: 'Fredoka', cursive;
+      font-size: 2rem;
+      color: var(--coral);
+      text-decoration: underline wavy var(--kuning);
+      text-underline-offset: 8px;
+      margin-bottom: 30px;
+    }
+    h3 {
+      font-family: 'Fredoka', cursive;
+      margin: 8px 0;
+      font-size: 1.4rem;
+    }
+    p { margin: 6px 0; }
+
+    /* ===== KARTU ===== */
+    .baris {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .kartu {
+      background-color: var(--putih);
+      border: 3px solid var(--kuning);
+      border-radius: 28px;
+      padding: 22px;
+      width: 270px;
+      box-shadow: 0 8px 0 var(--kuning);
+      transition: 0.3s;
+    }
+    .kartu:hover {
+      transform: translateY(-10px) rotate(-1deg);
+      box-shadow: 0 14px 0 var(--peach);
+      border-color: var(--peach);
+    }
+    .kartu img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    .ikon {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .harga {
+      color: var(--coral);
+      font-family: 'Fredoka', cursive;
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+    .catatan {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    .angka {
+      font-family: 'Fredoka', cursive;
+      font-size: 2rem;
+      color: var(--coral);
+      margin: 0;
+    }
+
+    /* ===== LABEL VARIAN ===== */
+    .chips {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0;
+    }
+    .chip {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .original { background: #FFE08A; }
+    .coklat   { background: #D9B08C; }
+    .keju     { background: #FFC857; }
+    .matcha   { background: #C5E1A5; }
+
+    /* ===== TENTANG TIM ===== */
+    .sapaan {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.6rem;
+      color: var(--coral);
+      margin: 0 0 8px;
+    }
+    .cerita {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      background: var(--putih);
+      border: 3px dashed var(--peach);
+      border-radius: 28px;
+      padding: 24px;
+    }
+    .statistik {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .stat {
+      background: var(--kuning);
+      border-radius: 20px;
+      padding: 10px 22px;
+    }
+    .stat b {
+      display: block;
+      font-family: 'Fredoka', cursive;
+      font-size: 1.8rem;
+      color: var(--coral);
+    }
+    .anggota {
+      width: 190px;
+      background: var(--putih);
+      border: 3px solid var(--kuning);
+      border-radius: 28px;
+      padding: 22px 14px;
+      box-shadow: 0 6px 0 var(--kuning);
+      transition: 0.3s;
+    }
+    .anggota:hover {
+      transform: translateY(-8px) rotate(1deg);
+      border-color: var(--peach);
+      box-shadow: 0 12px 0 var(--peach);
+    }
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fredoka', cursive;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--coklat);
+      background: var(--kuning);
+    }
+    .anggota h3 {
+      font-size: 1.1rem;
+      margin: 6px 0;
+    }
+    .peran {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .produksi  { background: #FFD3B5; }
+    .pemasaran { background: #FFE08A; }
+    .keuangan  { background: #C5E1A5; }
+
+    /* ===== TOMBOL ===== */
+    .tombol {
+      display: inline-block;
+      background-color: var(--coral);
+      color: var(--putih);
+      padding: 14px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 5px 0 #d96a3d;
+      transition: 0.2s;
+    }
+    .tombol:hover {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #d96a3d;
+    }
+    .tombol-baris {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .tombol.ig {
+      background-color: #E1306C;
+      box-shadow: 0 5px 0 #b3245a;
+    }
+    .tombol.ig:hover {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #b3245a;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: var(--kuning);
+      border-radius: 50px 50px 0 0;
+      margin-top: 60px;
+    }
+
+    /* ===== BARU: TOMBOL KEMBALI KE ATAS ===== */
+    .ke-atas {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background-color: var(--coral);
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 0 #d96a3d;
+      display: none;
+    }
+    .ke-atas.tampil {
+      display: block;
+    }
+
+    /* ===== BARU: BAGIAN MUNCUL SAAT DIGULIR ===== */
+    .muncul {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.7s;
+    }
+    .muncul.terlihat {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===== KHUSUS HP (taruh paling bawah) ===== */
+    @media (max-width: 600px) {
+      .kartu {
+        width: 100%;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== ATAS ===== -->
+  <header class="hero">
+    <span class="hiasan h1">🍌</span>
+    <span class="hiasan h2">🧀</span>
+    <span class="hiasan h3">🍫</span>
+    <span class="hiasan h4">🍵</span>
+    <span class="hiasan h5">✨</span>
+    <span class="hiasan h6">🍌</span>
+
+    <h1>PANCHAKA</h1>
+    <p>Pisang Nugget & Cheese Stick<br>Renyah di luar, manis dan gurih di dalam!</p>
+    <a class="tombol" href="#menu">Lihat Menu 🍽️</a>
+  </header>
+
+  <!-- ===== MENU ===== -->
+  <section id="menu">
+    <h2>Menu Kami</h2>
+    <div class="baris">
+
+      <div class="kartu">
+        <h3>🍌 Pisang Nugget</h3>
+        <img src="pisang.jpeg" alt="Pisang Nugget">
+        <div class="chips">
+          <span class="chip original">Original</span>
+          <span class="chip coklat">Coklat</span>
+          <span class="chip keju">Keju</span>
+          <span class="chip matcha">Matcha</span>
+        </div>
+        <p class="harga">Rp 10.000</p>
+        <p class="catatan">Semua varian harganya sama</p>
+      </div>
+
+      <div class="kartu">
+        <h3>🧀 Cheese Stick</h3>
+        <img src="cheese stick.jpeg" alt="Cheese Stick">
+        <div class="chips">
+          <span class="chip original">Original</span>
+          <span class="chip coklat">Coklat</span>
+          <span class="chip keju">Keju</span>
+          <span class="chip matcha">Matcha</span>
+        </div>
+        <p class="harga">Mulai Rp 10.000</p>
+        <p class="catatan">Tambah varian rasa +Rp 3.000</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== TIM ===== -->
+  <section>
+    <p class="sapaan">Kenalan dulu yuk! 👋</p>
+    <h2>Tentang Tim</h2>
+
+    <div class="cerita">
+      <h3>Kenapa “PANCHAKA”? 🌟</h3>
+      <p>Nama <b>PANCHAKA</b> berasal dari kata <i>pancha</i> yang berarti <b>lima</b>.
+      Kami adalah <b>5 mahasiswa</b> yang bekerja bareng membuat jajanan renyah
+      favorit kampus. Lima orang, satu tujuan: bikin kamu ketagihan! 🍌🧀</p>
+    </div>
+
+    <div class="statistik">
+      <div class="stat"><b>5</b>Anggota</div>
+      <div class="stat"><b>3</b>Divisi</div>
+      <div class="stat"><b>2</b>Produk andalan</div>
+    </div>
+
+    <div class="baris">
+
+      <div class="anggota">
+        <div class="avatar">H</div>
+        <h3>Handayani</h3>
+        <span class="peran produksi">👩‍🍳 Produksi</span>
+      </div>
+
+      <div class="anggota">
+        <div class="avatar">A</div>
+        <h3>Amina Rumatiga</h3>
+        <span class="peran pemasaran">📣 Pemasaran</span>
+      </div>
+
+      <div class="anggota">
+        <div class="avatar">A</div>
+        <h3>Anggun Clara N</h3>
+        <span class="peran keuangan">💰 Keuangan</span>
+      </div>
+
+      <div class="anggota">
+        <div class="avatar">Y</div>
+        <h3>Yunina Fadilatin M</h3>
+        <span class="peran pemasaran">📣 Pemasaran</span>
+      </div>
+
+      <div class="anggota">
+        <div class="avatar">Z</div>
+        <h3>Zahra Natasya P.G</h3>
+        <span class="peran produksi">👩‍🍳 Produksi</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== STRATEGI ===== -->
+  <section>
+    <h2>Strategi Kami</h2>
+    <div class="baris">
+      <div class="kartu">
+        <p class="ikon">🎯</p>
+        <h3>Target Pasar</h3>
+        <p>Mahasiswa, Pelajar di sekitar kampus, Pekerja Kantoran.</p>
+      </div>
+      <div class="kartu">
+        <p class="ikon">📣</p>
+        <h3>Promosi</h3>
+        <p>Instagram, WhatsApp, Mouth of Mouth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HASIL ===== -->
+  <section>
+    <h2>Hasil Penjualan</h2>
+    <div class="baris">
+      <div class="kartu">
+        <p class="angka">150</p>
+        <p>Porsi terjual</p>
+      </div>
+      <div class="kartu">
+        <p class="angka">Rp 1.800.000</p>
+        <p>Omzet</p>
+      </div>
+      <div class="kartu">
+        <p class="angka">Rp 600.000</p>
+        <p>Laba</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PESAN ===== -->
+  <section>
+    <h2>Mau Pesan?</h2>
+    <p>Pesan lewat WhatsApp atau DM Instagram kami ya! 💌</p>
+    <div class="tombol-baris">
+      <a class="tombol" href="https://wa.me/6282198285309">Pesan via WhatsApp 💬</a>
+      <a class="tombol ig" href="https://instagram.com/panchakaaa">DM Instagram @panchakaaa 📸</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Dibuat dengan 💛 oleh PANCHAKA &copy; 2026</p>
+  </footer>
+
+  <!-- ===== BARU: TOMBOL KEMBALI KE ATAS ===== -->
+  <button id="ke-atas" class="ke-atas" aria-label="Kembali ke atas">⬆️</button>
+
+  <!-- ===== BARU: JAVASCRIPT (taruh paling bawah, sebelum </body>) ===== -->
+  <script>
+    // --- Efek 1: tombol kembali ke atas ---
+    const tombol = document.querySelector('#ke-atas');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) {
+        tombol.classList.add('tampil');
+      } else {
+        tombol.classList.remove('tampil');
+      }
+    });
+
+    tombol.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // --- Efek 2: bagian muncul pelan-pelan saat digulir ---
+    const bagian = document.querySelectorAll('section');
+
+    bagian.forEach(function (b) {
+      b.classList.add('muncul');
+    });
+
+    const pengamat = new IntersectionObserver(function (daftar) {
+      daftar.forEach(function (item) {
+        if (item.isIntersecting) {
+          item.target.classList.add('terlihat');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    bagian.forEach(function (b) {
+      pengamat.observe(b);
+    });
+  </script>
+
+</body>
+</html>
